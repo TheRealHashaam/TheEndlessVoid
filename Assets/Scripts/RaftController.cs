@@ -38,4 +38,9 @@ public class RaftController : MonoBehaviour
         _steerAmount = Mathf.Lerp(_steerAmount, horizontalInput, Time.deltaTime / moveThreshold);
         transform.Rotate(0, _steerAmount * Steerspeed, 0);
     }
+
+    void RotateOnAxis()
+    {
+
+    }
 }
