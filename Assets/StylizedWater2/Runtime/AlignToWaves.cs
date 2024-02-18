@@ -109,18 +109,30 @@ namespace StylizedWater2
             }
 
             height += heightOffset;
+            ApplyTransformNew();
+            //ApplyTransform();
+        }
+        public float speed = 2;
+
+        void ApplyTransformNew()
+        {
             Rigidbody rb = GetComponent<Rigidbody>();
 
             if (rollAmount > 0)
             {
                 Quaternion rotation = Quaternion.FromToRotation(Vector3.up, normal) * rb.rotation;
-                rb.MoveRotation(Quaternion.Slerp(rb.rotation, rotation, Time.deltaTime));
+                rb.MoveRotation(Quaternion.Slerp(rb.rotation, rotation, speed * Time.deltaTime));
             }
-            ApplyTransform();
+            var position = this.transform.position;
+            rb.position = new Vector3(rb.position.x, height, rb.position.z);
         }
-        public float speed = 2;
+
         private void ApplyTransform()
         {
+            if (rollAmount > 0)
+            {
+                this.transform.up += normal;
+            }
             var position = this.transform.position;
             this.transform.position = new Vector3(position.x, height, position.z);
         }

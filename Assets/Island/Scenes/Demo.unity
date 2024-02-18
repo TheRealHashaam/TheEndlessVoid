@@ -359,6 +359,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 103303229}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &223555411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 223555412}
+  m_Layer: 0
+  m_Name: COM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &223555412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223555411}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1673651423}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &231169369
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,6 +774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WaterSplash_Trail (Move me)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181552966322008300, guid: e1321677b0533be469d492149e1b1d8d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7595077111565597244, guid: e1321677b0533be469d492149e1b1d8d,
         type: 3}
@@ -1329,14 +1365,13 @@ GameObject:
   - component: {fileID: 873679048}
   - component: {fileID: 873679051}
   - component: {fileID: 873679050}
-  - component: {fileID: 873679049}
   m_Layer: 0
   m_Name: Relections
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &873679048
 Transform:
   m_ObjectHideFlags: 0
@@ -1352,18 +1387,6 @@ Transform:
   m_Father: {fileID: 233957742}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &873679049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873679047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b9488e8346e6445b175d59f4d2cd5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &873679050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2048,6 +2071,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f,
+        type: 3}
       propertyPath: far clip plane
       value: 500
       objectReference: {fileID: 0}
@@ -2055,6 +2083,21 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.4056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.4056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.4056604
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409498, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
@@ -2074,7 +2117,7 @@ PrefabInstance:
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32107544
+      value: 0.24014258
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
@@ -2827,7 +2870,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32107544
+      value: 0.24014258
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -3535,6 +3578,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1639696505}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1666278395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defe3efb56c1bc943a6bfb504a00dc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  startDistance:
+    m_OverrideState: 0
+    m_Value: 0
+  fogDensity:
+    m_OverrideState: 0
+    m_Value: 20
+  heightFogDepth:
+    m_OverrideState: 0
+    m_Value: 25
+  heightFogDensity:
+    m_OverrideState: 0
+    m_Value: 1
+  heightFogBrightness:
+    m_OverrideState: 0
+    m_Value: 0.6
+  fogBrightness:
+    m_OverrideState: 0
+    m_Value: 1
+  subsurfaceStrength:
+    m_OverrideState: 0
+    m_Value: 1
+  causticsStrength:
+    m_OverrideState: 0
+    m_Value: 1
+  distortionStrength:
+    m_OverrideState: 0
+    m_Value: 0.25
+  distortionFrequency:
+    m_OverrideState: 0
+    m_Value: 0.75
+  distortionSpeed:
+    m_OverrideState: 0
+    m_Value: 0.5
 --- !u!1 &1667389710
 GameObject:
   m_ObjectHideFlags: 0
@@ -3650,6 +3739,7 @@ Transform:
   - {fileID: 1872088945025082144}
   - {fileID: 2758683244064714962}
   - {fileID: 1020196432}
+  - {fileID: 223555412}
   m_Father: {fileID: 543450652897030596}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 180}
@@ -4764,6 +4854,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerArmature
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544,
         type: 3}
@@ -5932,52 +6027,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1957390774}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2000986848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: defe3efb56c1bc943a6bfb504a00dc77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  startDistance:
-    m_OverrideState: 0
-    m_Value: 0
-  fogDensity:
-    m_OverrideState: 0
-    m_Value: 20
-  heightFogDepth:
-    m_OverrideState: 0
-    m_Value: 25
-  heightFogDensity:
-    m_OverrideState: 0
-    m_Value: 1
-  heightFogBrightness:
-    m_OverrideState: 0
-    m_Value: 0.6
-  fogBrightness:
-    m_OverrideState: 0
-    m_Value: 1
-  subsurfaceStrength:
-    m_OverrideState: 0
-    m_Value: 1
-  causticsStrength:
-    m_OverrideState: 0
-    m_Value: 1
-  distortionStrength:
-    m_OverrideState: 0
-    m_Value: 0.25
-  distortionFrequency:
-    m_OverrideState: 0
-    m_Value: 0.75
-  distortionSpeed:
-    m_OverrideState: 0
-    m_Value: 0.5
 --- !u!1 &2114435151
 GameObject:
   m_ObjectHideFlags: 0
@@ -6022,7 +6071,7 @@ MonoBehaviour:
   waterLevelPadding: 0
   waterMaterial: {fileID: 2100000, guid: 35027ffa3123a9549bb75189aa589910, type: 2}
   dynamicMaterial: 0
-  settings: {fileID: 2000986848}
+  settings: {fileID: 1666278395}
   useVolumeBlending: 1
   startDistance: 0
   fogDensity: 20
@@ -6177,7 +6226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148891511678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4198918, y: -1.9190671, z: 30.34}
+  m_LocalPosition: {x: -2.4198918, y: -2, z: 30.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6281,9 +6330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a136c9fe09bdf4ca57210c3d9ea5c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  turnSpeed: 5
-  Model: {fileID: 0}
+  COM: {x: 0, y: 0, z: 0}
+  speed: 2
+  Steerspeed: 1
+  moveThreshold: 10
+  m_COM: {fileID: 223555412}
 --- !u!114 &919132148891511681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6291,7 +6342,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148891511678}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75215afeb99f1fc48aacad291a415f32, type: 3}
   m_Name: 
@@ -6305,7 +6356,7 @@ MonoBehaviour:
   heightOffset: 0.05
   rollAmount: 0.05
   samples: []
-  speed: 1.5
+  speed: 1
 --- !u!54 &919132148891511682
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,26 +4,38 @@ using UnityEngine;
 
 public class RaftController : MonoBehaviour
 {
-    public float speed;
-    public float turnSpeed;
-    public Transform Model;
-    void Update()
+    public Vector3 COM;
+    public float speed= 1.0f;
+    public float Steerspeed = 1.0f;
+    public float moveThreshold = 10f;
+    Rigidbody _rigidbody;
+    public Transform m_COM;
+    float _movementFactor;
+    float _steerAmount;
+    private void Awake()
     {
-        // Move forward based on input
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(transform.forward * speed * Time.deltaTime);
-        }
-        // Turn based on input
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(Vector3.up * -turnSpeed * Time.deltaTime);
-            //Model.Rotate(Vector3.up * -turnSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime);
-            //Model.Rotate(Vector3.up * turnSpeed * Time.deltaTime);
-        }
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        Balance();
+        Movement();
+        Steer();
+    }
+    void Balance()
+    {
+        _rigidbody.centerOfMass = m_COM.position;
+    }
+    void Movement()
+    {
+        float verticalInput = Input.GetAxis("Vertical");
+        _movementFactor = Mathf.Lerp(_movementFactor, verticalInput, Time.deltaTime/ moveThreshold);
+        transform.Translate(0, 0,_movementFactor * speed);
+    }
+    void Steer()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        _steerAmount = Mathf.Lerp(_steerAmount, horizontalInput, Time.deltaTime / moveThreshold);
+        transform.Rotate(0, _steerAmount * Steerspeed, 0);
     }
 }
