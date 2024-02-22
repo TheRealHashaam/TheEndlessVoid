@@ -109,11 +109,17 @@ namespace StylizedWater2
             }
 
             height += heightOffset;
-            ApplyTransformNew();
-            //ApplyTransform();
+            if(!AllowByonce)
+            {
+                ApplyTransformNew();
+            }
+            else
+            {
+                ApplyTransform();
+            }
         }
         public float speed = 2;
-
+        public bool AllowByonce;
         void ApplyTransformNew()
         {
             Rigidbody rb = GetComponent<Rigidbody>();
@@ -121,7 +127,13 @@ namespace StylizedWater2
             if (rollAmount > 0)
             {
                 Quaternion rotation = Quaternion.FromToRotation(Vector3.up, normal) * rb.rotation;
-                rb.MoveRotation(Quaternion.Slerp(rb.rotation, rotation, speed * Time.deltaTime));
+                float x = rotation.x;
+                float z =rotation.z ;
+                //Debug.LogError("X " + x);
+                //Debug.LogError("Z " + z);
+                x = Mathf.Clamp(x, -10, 10);
+                z = Mathf.Clamp(z, -10, 10);
+                rb.MoveRotation(Quaternion.Slerp(rb.rotation, Quaternion.Euler(x,rotation.y,z), speed * Time.deltaTime));
             }
             var position = this.transform.position;
             rb.position = new Vector3(rb.position.x, height, rb.position.z);
